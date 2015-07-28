@@ -1,0 +1,127 @@
+html, body, header, nav, ul, li,
+strong, main, section, img, div, p,
+form, fieldset, label, article, footer, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  box-sizing: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+h1 {
+  font-family: fantasy;
+  text-align: center;
+  font-size: 60px;
+}
+
+h2 {
+  font-family: sans-serif;
+  font-style: italic;
+  text-align: center;
+}
+
+h3 {
+  font-family: fantasy;
+  text-align: center;
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.top-bar {
+  height: 50px;
+  background: lightblue;
+}
+
+.main-container {
+  padding: 50px;
+}
+
+/*begin intro panel*/
+.intro-panel {
+
+}
+
+.picture-div {
+  text-align: center;
+}
+
+.picture-div img {
+  width: 60px;
+  border-radius: 30px;
+}
+
+.intro-panel .intro-info {
+  margin: auto;
+  width: 800px;
+  font-family: cursive;
+  font-size: 30px;
+  color: gray;
+}
+
+/*begin projects panel*/
+.projects-panel {
+  margin-top: 50px;
+}
+
+.project-div {
+  float: left;
+  width: 400px;
+}
+
+.project-div img {
+  margin-left: 100px;
+  width: 200px;
+  height: 200px;
+}
+
+.project-div .project-info {
+  font-family: cursive;
+  margin: 10px;
+}
+
+/*begin games panel*/
+.games-panel {
+  margin-top: 50px;
+}
+
+.background-panel {
+  margin-top: 50px;
+}
+
+.conclusion-panel {
+
+}
+
+/*galaxy style area */
+
+canvas {
+  background: green;
+}
+  .galaxy-container{
+    position: relative;
+  }
+  .game-over {
+    position: absolute;
+    display: none;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    width: 400px;
+    height: 200px;
+    background: red;
+    top: 200px;
+  }
+
+  .show {
+    display: block;
+  }
