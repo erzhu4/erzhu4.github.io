@@ -31,6 +31,10 @@ h3 {
   text-align: center;
 }
 
+.hide {
+  display: none;
+}
+
 .group:after {
   content: "";
   clear: both;
@@ -109,10 +113,10 @@ canvas {
 }
   .galaxy-container{
     position: relative;
+    float: left;
   }
-  .game-over {
+  .galaxy-game-over {
     position: absolute;
-    display: none;
     text-align: center;
     color: white;
     font-size: 40px;
@@ -120,8 +124,4 @@ canvas {
     height: 200px;
     background: red;
     top: 200px;
-  }
-
-  .show {
-    display: block;
   }

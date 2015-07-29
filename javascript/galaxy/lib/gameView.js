@@ -25,7 +25,7 @@
   };
 
   GameView.prototype.start = function () {
-    $(".game-over").removeClass("show");
+    $(".galaxy-game-over").addClass("hide");
     this.game = new Asteroids.Game();
     this.ship = this.game.addShip();
     var gameView = this;

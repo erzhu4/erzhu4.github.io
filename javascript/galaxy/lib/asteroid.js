@@ -20,7 +20,7 @@
 
   Asteroid.prototype.collideWith = function (otherObject) {
     if (otherObject instanceof Asteroids.Ship) {
-      $(".game-over").addClass("show");
+      $(".galaxy-game-over").removeClass("hide");
       this.game.remove(otherObject);
     }
   };
