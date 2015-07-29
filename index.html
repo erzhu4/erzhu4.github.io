@@ -4,7 +4,7 @@
 <head>
   <title>Eric Zhu</title>
   <link rel="stylesheet" href="css/all.css">
-  <link rel="stylesheet" href="css/snake.css">
+  <link rel="stylesheet" href="css/games.css">
   <script type="application/javascript" src="jquery.js"></script>
   <script type="application/javascript" src="javascript/galaxy/keys/keymaster.js"></script>
   <script type="application/javascript" src="javascript/galaxy/lib/util.js"></script>
@@ -63,7 +63,7 @@
 
     </div>
 
-    <div class="games-panel">
+    <div class="games-panel group">
       <h2>Fun and Games</h2>
 
       <div class="project-div galaxy-div">
@@ -72,26 +72,35 @@
         <div class="project-info">
           A simple 2D canvas game inspired by the arcade game Galaxy.
         </div>
-        <button class="galaxy-play">Play</button>
+        <button class="galaxy-play play-button">Play</button>
       </div>
 
-      <div class="galaxy-container hide">
+      <div class="galaxy-container game-div hide">
+        <button class="galaxy-start-button start-button">Start</button>
         <canvas></canvas><br>
-        <button class="galaxy-start-button">Start</button>
         <div class="galaxy-game-over hide">
           GAME OVER!!!!!
-          <button class="galaxy-reset">Reset</button>
+          <button class="galaxy-reset reset-button">Reset</button>
         </div>
       </div>
 
 
-      <div class="snake-container">
+      <div class="project-div snake-div">
+        <h3>Snake</h3>
+        <img src="">
+        <div class="project-info">
+          The popular game snake made with JavaScript and jQuery.
+        </div>
+        <button class="snake-play play-button">Play</button>
+      </div>
+
+      <div class="snake-container game-div hide">
+        <button class="start-snake start-button">Start</button>
         <div id="snake"></div>
         <div class="snake-game-over hide">
           GAME OVER!!!!!
-          <button class="snake-reset">Reset</button>
+          <button class="reset-snake reset-button">Reset</button>
         </div>
-        <button class="start-snake">Start</button>
       </div>
 
 
@@ -109,6 +118,26 @@
 
 <script type="application/javascript">
   (function () {
+
+
+    $(".galaxy-play").on("click", function () {
+
+      $(".snake-div").removeClass("hide");
+      $(".snake-container").addClass("hide");
+
+      $(".galaxy-div").addClass("hide");
+      $(".galaxy-container").removeClass("hide");
+    });
+
+    $(".snake-play").on("click", function () {
+
+      $(".galaxy-div").removeClass("hide");
+      $(".galaxy-container").addClass("hide");
+
+      $(".snake-div").addClass("hide");
+      $(".snake-container").removeClass("hide");
+    });
+
       var canvasEl = document.getElementsByTagName("canvas")[0];
       canvasEl.width = Asteroids.Game.DIM_X;
       canvasEl.height = Asteroids.Game.DIM_Y;
@@ -118,16 +147,11 @@
 
     $(".galaxy-start-button").on("click", function (event) {
       galview.start();
-      $(event.currentTarget).prop("disabled", true);
+      $(event.currentTarget).addClass("hide");
     });
 
     $(".galaxy-reset").on("click", function () {
       galview.start();
-    });
-
-    $(".galaxy-play").on("click", function () {
-      $(".galaxy-div").addClass("hide");
-      $(".galaxy-container").removeClass("hide");
     });
 
     var board = new SnakeGame.Board();
@@ -139,6 +163,7 @@
     });
 
     $(".reset-snake").on("click", function (event){
+      $(".snake-game-over").addClass("hide");
       $("#snake").html("");
       board = new SnakeGame.Board();
       snakeview = new SnakeGame.View(board, $('#snake'));

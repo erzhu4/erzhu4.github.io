@@ -55,7 +55,7 @@ View.prototype.step = function (){
 
 View.prototype.gameOver = function (){
 	window.clearInterval(this.interval);
-	this.$(".snake-game-over").removeClass("hide");
+	$(".snake-game-over").removeClass("hide");
 }
 
 View.prototype.draw = function() {

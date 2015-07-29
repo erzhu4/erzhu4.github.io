@@ -47,6 +47,8 @@ h3 {
 }
 
 .main-container {
+  width: 1250px;
+  margin: auto;
   padding: 50px;
 }
 
@@ -100,28 +102,9 @@ h3 {
 
 .background-panel {
   margin-top: 50px;
+  width: 100%;
 }
 
 .conclusion-panel {
 
 }
-
-/*galaxy style area */
-
-canvas {
-  background: green;
-}
-  .galaxy-container{
-    position: relative;
-    float: left;
-  }
-  .galaxy-game-over {
-    position: absolute;
-    text-align: center;
-    color: white;
-    font-size: 40px;
-    width: 400px;
-    height: 200px;
-    background: red;
-    top: 200px;
-  }
