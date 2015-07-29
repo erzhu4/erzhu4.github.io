@@ -9,7 +9,7 @@
   <script type="application/javascript" src="javascript/galaxy/keys/keymaster.js"></script>
   <script type="application/javascript" src="javascript/galaxy/lib/util.js"></script>
   <script type="application/javascript" src="javascript/galaxy/lib/movingObject.js"></script>
-  <script type="application/javascript" src="javascript/galaxy/lib/asteroid.js"></script>
+  <script type="application/javascript" src="javascript/galaxy/lib/enemy.js"></script>
   <script type="application/javascript" src="javascript/galaxy/lib/ship.js"></script>
   <script type="application/javascript" src="javascript/galaxy/lib/bullet.js"></script>
   <script type="application/javascript" src="javascript/galaxy/lib/game.js"></script>
@@ -152,11 +152,11 @@
     });
 
       var canvasEl = document.getElementsByTagName("canvas")[0];
-      canvasEl.width = Asteroids.Game.DIM_X;
-      canvasEl.height = Asteroids.Game.DIM_Y;
+      canvasEl.width = Galaxy.Game.DIM_X;
+      canvasEl.height = Galaxy.Game.DIM_Y;
       var ctx = canvasEl.getContext("2d");
-      var game = new Asteroids.Game();
-      var galview = new Asteroids.GameView(game, ctx)
+      var game = new Galaxy.Game();
+      var galview = new Galaxy.GameView(game, ctx)
 
     $(".galaxy-start-button").on("click", function (event) {
       galview.start();

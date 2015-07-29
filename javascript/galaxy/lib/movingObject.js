@@ -1,16 +1,16 @@
 (function () {
-  if (typeof Asteroids === "undefined") {
-    window.Asteroids = {};
+  if (typeof Galaxy === "undefined") {
+    window.Galaxy = {};
   }
 
-  var MovingObject = Asteroids.MovingObject = function (options) {
+  var MovingObject = Galaxy.MovingObject = function (options) {
     this.pos = options.pos;
     this.vel = options.vel;
     this.radius = options.radius;
     this.color = options.color;
     this.game = options.game;
-    this.sprite = options.sprite;
     this.dem = options.dem;
+    this.sprite = options.sprite;
   };
 
   MovingObject.prototype.collideWith = function (otherObject) {
@@ -22,7 +22,7 @@
   };
 
   MovingObject.prototype.isCollidedWith = function (otherObject) {
-    var centerDist = Asteroids.Util.dist(this.pos, otherObject.pos);
+    var centerDist = Galaxy.Util.dist(this.pos, otherObject.pos);
     return centerDist < (this.radius + otherObject.radius);
   };
 

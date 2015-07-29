@@ -1,43 +1,43 @@
 (function () {
-  if (typeof Asteroids === "undefined") {
-    window.Asteroids = {};
+  if (typeof Galaxy === "undefined") {
+    window.Galaxy = {};
   }
 
-  var Game = Asteroids.Game = function () {
-    this.asteroids = [];
+  var Game = Galaxy.Game = function () {
+    this.Galaxy = [];
     this.bullets = [];
     this.ships = [];
 
-    this.addAsteroids();
+    this.addGalaxy();
   };
 
   Game.BG_COLOR = "#000000";
   Game.DIM_X = 400;
   Game.DIM_Y = 600;
   Game.FPS = 32;
-  Game.NUM_ASTEROIDS = 15;
+  Game.NUM_Galaxy = 15;
 
   Game.prototype.add = function (object) {
-    if (object instanceof Asteroids.Asteroid) {
-      this.asteroids.push(object);
-    } else if (object instanceof Asteroids.Bullet) {
+    if (object instanceof Galaxy.Enemy) {
+      this.Galaxy.push(object);
+    } else if (object instanceof Galaxy.Bullet) {
       this.bullets.push(object);
-    } else if (object instanceof Asteroids.Ship) {
+    } else if (object instanceof Galaxy.Ship) {
       this.ships.push(object);
     } else {
       throw "";
     }
   };
 
-  Game.prototype.addAsteroids = function () {
-    for (var i = 0; i < Game.NUM_ASTEROIDS; i++) {
-      this.add(new Asteroids.Asteroid({ game: this }));
+  Game.prototype.addGalaxy = function () {
+    for (var i = 0; i < Game.NUM_Galaxy; i++) {
+      this.add(new Galaxy.Enemy({ game: this }));
     }
   };
 
   Game.prototype.addShip = function () {
-    var ship = new Asteroids.Ship({
-      pos: [Asteroids.Game.DIM_X/2, -550],
+    var ship = new Galaxy.Ship({
+      pos: [Galaxy.Game.DIM_X/2, -550],
       game: this
     });
 
@@ -46,7 +46,7 @@
   };
 
   Game.prototype.allObjects = function () {
-    return [].concat(this.ships, this.asteroids, this.bullets);
+    return [].concat(this.ships, this.Galaxy, this.bullets);
   };
 
   Game.prototype.checkCollisions = function () {
@@ -81,7 +81,7 @@
 
   Game.prototype.moveObjects = function () {
     if(this.ships[0]){
-      if (this.ships[0].pos[0] > Asteroids.Game.DIM_X - 20) {
+      if (this.ships[0].pos[0] > Galaxy.Game.DIM_X - 20) {
         this.ships[0].vel = [0,0];
         this.ships[0].pos[0] -= 1;
       }
@@ -98,12 +98,12 @@
 
 
   Game.prototype.remove = function (object) {
-    if (object instanceof Asteroids.Bullet) {
+    if (object instanceof Galaxy.Bullet) {
       this.bullets.splice(this.bullets.indexOf(object), 1);
-    } else if (object instanceof Asteroids.Asteroid) {
-      var idx = this.asteroids.indexOf(object);
-      this.asteroids[idx] = new Asteroids.Asteroid({ game: this });
-    } else if (object instanceof Asteroids.Ship) {
+    } else if (object instanceof Galaxy.Enemy) {
+      var idx = this.Galaxy.indexOf(object);
+      this.Galaxy[idx] = new Galaxy.Enemy({ game: this });
+    } else if (object instanceof Galaxy.Ship) {
       this.ships.splice(this.ships.indexOf(object), 1);
     } else {
       throw "um";

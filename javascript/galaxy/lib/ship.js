@@ -1,26 +1,27 @@
 (function () {
-  if (typeof Asteroids === "undefined") {
-    window.Asteroids = {};
+  if (typeof Galaxy === "undefined") {
+    window.Galaxy = {};
   }
 
-  var Ship = Asteroids.Ship = function (options) {
+  var Ship = Galaxy.Ship = function (options) {
     var sprite = new Image();
     sprite.src = "./images/ship.gif";
     options.radius = Ship.RADIUS;
     options.vel = options.vel || [0, 0];
-    options.color = "#999999"
+    options.color = "#999999";
     options.dem = 30;
     options.sprite = sprite;
-    Asteroids.MovingObject.call(this, options);
+
+    Galaxy.MovingObject.call(this, options);
   };
 
   Ship.RADIUS = 20;
 
-  Asteroids.Util.inherits(Ship, Asteroids.MovingObject);
+  Galaxy.Util.inherits(Ship, Galaxy.MovingObject);
 
   Ship.prototype.fireBullet = function () {
     var bulletVel = [0, -25];
-    var bullet = new Asteroids.Bullet({
+    var bullet = new Galaxy.Bullet({
       pos: this.pos,
       vel: bulletVel,
       color: this.color,

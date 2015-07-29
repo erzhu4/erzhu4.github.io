@@ -1,24 +1,24 @@
 (function () {
-  if (typeof Asteroids === "undefined") {
-    window.Asteroids = {};
+  if (typeof Galaxy === "undefined") {
+    window.Galaxy = {};
   }
 
-  var Bullet = Asteroids.Bullet = function (options) {
+  var Bullet = Galaxy.Bullet = function (options) {
     var sprite = new Image();
     sprite.src = "./images/missile.png";
     options.radius = Bullet.RADIUS;
     options.sprite = sprite;
     options.dem = 15;
-    Asteroids.MovingObject.call(this, options);
+    Galaxy.MovingObject.call(this, options);
   };
 
   Bullet.RADIUS = 2;
   Bullet.SPEED = 25;
 
-  Asteroids.Util.inherits(Bullet, Asteroids.MovingObject);
+  Galaxy.Util.inherits(Bullet, Galaxy.MovingObject);
 
   Bullet.prototype.collideWith = function (otherObject) {
-    if (otherObject instanceof Asteroids.Asteroid) {
+    if (otherObject instanceof Galaxy.Enemy) {
       this.remove();
       otherObject.remove();
     }

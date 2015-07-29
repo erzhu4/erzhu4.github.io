@@ -1,9 +1,9 @@
 (function () {
-  if (typeof Asteroids === "undefined") {
-    window.Asteroids = {};
+  if (typeof Galaxy === "undefined") {
+    window.Galaxy = {};
   }
 
-  var Util = Asteroids.Util = {};
+  var Util = Galaxy.Util = {};
 
   // Normalize the length of the vector to 1, maintaining direction.
   var dir = Util.dir = function (vec) {

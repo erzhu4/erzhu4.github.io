@@ -1,9 +1,9 @@
 (function () {
-  if (typeof Asteroids === "undefined") {
-    window.Asteroids = {};
+  if (typeof Galaxy === "undefined") {
+    window.Galaxy = {};
   }
 
-  var GameView = Asteroids.GameView = function (game, ctx) {
+  var GameView = Galaxy.GameView = function (game, ctx) {
     this.ctx = ctx;
     this.timerId = null;
   };
@@ -26,7 +26,7 @@
 
   GameView.prototype.start = function () {
     $(".galaxy-game-over").addClass("hide");
-    this.game = new Asteroids.Game();
+    this.game = new Galaxy.Game();
     this.ship = this.game.addShip();
     var gameView = this;
     this.stop();
@@ -34,7 +34,7 @@
       function () {
         gameView.game.step();
         gameView.game.draw(gameView.ctx);
-      }, 1000 / Asteroids.Game.FPS
+      }, 1000 / Galaxy.Game.FPS
     );
 
     this.bindKeyHandlers();
