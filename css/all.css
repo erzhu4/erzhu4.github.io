@@ -98,6 +98,10 @@ h3 {
   height: 200px;
 }
 
+.project-div .links {
+  text-align: center;
+}
+
 .project-div .project-info {
   font-family: cursive;
   margin: 10px;
