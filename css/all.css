@@ -46,8 +46,18 @@ h3 {
 }
 
 .top-bar {
+  text-align: center;
   height: 50px;
   background: lightblue;
+}
+
+.top-bar a {
+  margin: 30px;
+}
+
+.top-bar .bar-right {
+  margin: auto;
+  padding: 15px;
 }
 
 .main-container {
@@ -114,10 +124,10 @@ h3 {
 }
 
 .background-panel {
-  padding-top: 50px;
-  width: 100%;
-}
-
-.conclusion-panel {
-
+  padding: 50px;
+  margin-bottom: 50px;
+  background: lightgray;
+  width: 92%;
+  font-family: fantasy;
+  font-size: 20px;
 }
