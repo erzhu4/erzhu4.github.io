@@ -14,6 +14,10 @@ form, fieldset, label, article, footer, small {
   background: transparent;
 }
 
+body{
+  background-image: url(../images/gray-background.jpg);
+}
+
 h1 {
   font-family: fantasy;
   text-align: center;
@@ -49,11 +53,12 @@ h3 {
 .main-container {
   width: 1250px;
   margin: auto;
-  padding: 50px;
 }
 
 /*begin intro panel*/
 .intro-panel {
+  padding: 40px;
+  background-image: url(../images/sky.jpg);
 
 }
 
@@ -71,12 +76,15 @@ h3 {
   width: 800px;
   font-family: cursive;
   font-size: 30px;
-  color: gray;
+  color: #3333FF;
+  text-shadow: 1px 1px 1px white;
 }
 
 /*begin projects panel*/
 .projects-panel {
-  margin-top: 50px;
+  margin-top: 20px;
+  padding-top: 50px;
+  background: #CCE6FF;
 }
 
 .project-div {
@@ -97,11 +105,12 @@ h3 {
 
 /*begin games panel*/
 .games-panel {
-  margin-top: 50px;
+  background: #CCE6FF;
+  padding-top: 50px;
 }
 
 .background-panel {
-  margin-top: 50px;
+  padding-top: 50px;
   width: 100%;
 }
 
