@@ -21,6 +21,7 @@
     if (otherObject instanceof Galaxy.Enemy) {
       this.remove();
       otherObject.remove();
+      $(".galaxy-score").html(parseInt($(".galaxy-score").html()) + 1);
     }
   };
 

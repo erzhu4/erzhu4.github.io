@@ -26,6 +26,7 @@
 
   GameView.prototype.start = function () {
     $(".galaxy-game-over").addClass("hide");
+    $(".galaxy-score").html(0);
     this.game = new Galaxy.Game();
     this.ship = this.game.addShip();
     var gameView = this;

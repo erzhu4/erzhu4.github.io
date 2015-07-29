@@ -9,7 +9,7 @@
     options.radius = Ship.RADIUS;
     options.vel = options.vel || [0, 0];
     options.color = "#999999";
-    options.dem = 30;
+    options.dem = 50;
     options.sprite = sprite;
 
     Galaxy.MovingObject.call(this, options);

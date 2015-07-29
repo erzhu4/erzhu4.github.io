@@ -92,6 +92,13 @@ canvas {
 		left: 45px;
   }
 
+	.score-container {
+		width: 150px;
+		float: right;
+		font-weight: bold;
+		font-size: 25px;
+	}
+
 /*snake starts here*/
 .snake-container {
 	position: relative;
