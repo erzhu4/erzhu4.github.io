@@ -4,8 +4,11 @@
   }
 
   var Bullet = Asteroids.Bullet = function (options) {
+    var sprite = new Image();
+    sprite.src = "./images/missile.png";
     options.radius = Bullet.RADIUS;
-
+    options.sprite = sprite;
+    options.dem = 15;
     Asteroids.MovingObject.call(this, options);
   };
 
