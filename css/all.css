@@ -131,3 +131,31 @@ h3 {
   font-family: fantasy;
   font-size: 20px;
 }
+
+.skill-header {
+  margin-top: 50px;
+}
+
+.tech-logo {
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+
+.tech-logo img {
+  width: 100%;
+}
+
+.css-logo img {
+  width: 100%;
+}
+
+.css-logo {
+  float: left;
+  width: 200px;
+  height: 100px;
+}
+
+.tech-logo {
+  margin: 20px;
+}

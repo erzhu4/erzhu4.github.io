@@ -35,8 +35,8 @@ ul {
 	height: 30px;
 	font-size: 20px;
 	font-weight: bold;
-	color: red;
-	background: lightblue;
+	color: white;
+	background: gray;
 	margin-bottom: 10px;
 }
 
@@ -59,6 +59,11 @@ ul {
 	cursor: pointer;
 	background: blue;
 }
+
+.galaxy-play:hover, .snake-play {
+	cursor: pointer;
+}
+
 
 
 /*galaxy style area */
