@@ -1,0 +1,161 @@
+ul {
+	list-style: none;
+}
+
+.key {
+	border: gray;
+	background: lightgray;
+	font-size: 10px;
+	font-weight: bold;
+	box-shadow: 3px 3px 3px gray;
+}
+
+.game-div {
+	width: 500px;
+	margin: 50px;
+}
+
+.play-button {
+	width: 50%;
+	height: 30px;
+	font-size: 20px;
+	font-weight: bold;
+	color: red;
+	background: yellow;
+	margin-left: 70px;
+}
+
+.play-button:hover {
+	cursor: pointer;
+	background: orange;
+}
+
+.start-button {
+	position: absolute;
+	width: 80%;
+	margin-left: 45px;
+	height: 130px;
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	background: gray;
+	margin-bottom: 10px;
+	top: 300px;
+}
+
+.start-button:hover {
+	cursor: pointer;
+	background: blue;
+}
+
+.reset-button {
+	width: 80%;
+	margin: auto;
+	height: 30px;
+	font-size: 20px;
+	font-weight: bold;
+	color: red;
+	background: lightgray;
+}
+
+.reset-button:hover {
+	cursor: pointer;
+	background: blue;
+}
+
+.galaxy-play:hover, .snake-play {
+	cursor: pointer;
+}
+
+
+
+/*galaxy style area */
+
+.galaxy-div {
+	margin: 50px;
+	margin-left: 180px;
+}
+
+.snake-div {
+	margin: 50px;
+}
+
+canvas {
+  background: black;
+	margin-left: 45px;
+}
+  .galaxy-container{
+    position: relative;
+    float: left;
+  }
+  .galaxy-game-over {
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    width: 400px;
+    height: 200px;
+    background: red;
+    top: 200px;
+		left: 45px;
+  }
+
+	.score-container {
+		width: 150px;
+		float: right;
+		font-weight: bold;
+		font-size: 25px;
+	}
+
+/*snake starts here*/
+.snake-container {
+	position: relative;
+	width: 400px;
+	float: left;
+}
+
+.grid {
+	margin: auto;
+	display: block;
+	width: 350px;
+	height: 350px;
+	background: lightgreen;
+	border: 5px	dotted green;
+}
+
+h1 {
+	font-size: 50px;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+.grid > li {
+	height: 12px;
+	width: 12px;
+	border: 1px solid #000;
+	float: left;
+}
+
+.grid > .snake {
+	background: green;
+}
+
+.grid > .apple {
+	background: red;
+}
+
+.hide {
+	display: none;
+}
+
+.snake-game-over {
+	position: absolute;
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	width: 300px;
+	height: 100px;
+	background: blue;
+	top: 175px;
+	left: 50px;
+}
