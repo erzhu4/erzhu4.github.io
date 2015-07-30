@@ -39,9 +39,14 @@
     this.game.add(bullet2);
   };
 
+  Ship.prototype.slowDown = function () {
+    this.vel[0] = 0;
+  };
+
+
   Ship.prototype.power = function (impulse) {
     var ship = this;
-    this.vel[0] = impulse[0] * 4;
+    this.vel[0] = impulse[0] * 8;
   };
 
 })();

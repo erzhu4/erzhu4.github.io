@@ -8,20 +8,29 @@
     this.timerId = null;
   };
 
-  GameView.MOVES = {
-    "a": [-1,  0],
-    "d": [ 1,  0]
-  };
-
   GameView.prototype.bindKeyHandlers = function () {
-    var ship = this.ship;
+      var ship = this.ship;
+      // a
+      $(document).on("keydown", function (event) {
+        // a
+        if (event.keyCode === 65){
+          ship.power([-1, 0]);
+        }
+        //d
+        if (event.keyCode === 68){
+          ship.power([1, 0]);
+        }
 
-    Object.keys(GameView.MOVES).forEach(function (k) {
-      var move = GameView.MOVES[k];
-      key(k, function () { ship.power(move); });
+        if (event.keyCode === 80){
+          ship.fireBullet();
+        }
+      });
+
+    $(document).on("keyup", function (event) {
+      if ((event.keyCode === 65) || (event.keyCode === 68)){
+        ship.slowDown();
+      }
     });
-
-    key("p", function () { ship.fireBullet(); });
   };
 
   GameView.prototype.start = function () {
