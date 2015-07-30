@@ -20,6 +20,8 @@ body{
 
 h1 {
   font-family: fantasy;
+  color: black;
+  text-shadow: 2px 2px 2px white;
   text-align: center;
   font-size: 60px;
 }
