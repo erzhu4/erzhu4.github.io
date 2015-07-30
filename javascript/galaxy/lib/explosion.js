@@ -30,8 +30,4 @@
 		return false;
 	};
 
-	Explosion.prototype.CollidedWith = function (obj) {
-
-	};
-
  })();

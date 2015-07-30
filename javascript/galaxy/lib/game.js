@@ -8,14 +8,14 @@
     this.bullets = [];
     this.ships = [];
     this.explosions = [];
-    this.addGalaxy();
+    this.numEnemies = 10;
+    this.addEnemies();
   };
 
   Game.BG_COLOR = "#000000";
   Game.DIM_X = 400;
   Game.DIM_Y = 600;
   Game.FPS = 32;
-  Game.NUM_Galaxy = 15;
 
   Game.prototype.add = function (object) {
     if (object instanceof Galaxy.Enemy) {
@@ -29,8 +29,8 @@
     }
   };
 
-  Game.prototype.addGalaxy = function () {
-    for (var i = 0; i < Game.NUM_Galaxy; i++) {
+  Game.prototype.addEnemies = function () {
+    for (var i = 0; i < this.numEnemies; i++) {
       this.add(new Galaxy.Enemy({ game: this }));
     }
   };

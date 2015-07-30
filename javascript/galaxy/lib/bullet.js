@@ -20,10 +20,13 @@
 
   Bullet.prototype.collideWith = function (otherObject) {
     if (otherObject instanceof Galaxy.Enemy) {
-      this.game.addExplosion(this.pos);	
+      this.game.addExplosion(this.pos);
       this.remove();
       otherObject.remove();
       $(".galaxy-score").html(parseInt($(".galaxy-score").html()) + 1);
+      if (parseInt($(".galaxy-score").html()) % 50 === 0) {
+        this.game.addEnemies();
+      }
     }
   };
 
