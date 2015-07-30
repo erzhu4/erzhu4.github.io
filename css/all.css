@@ -102,6 +102,7 @@ h3 {
 .project-div {
   float: left;
   width: 400px;
+  margin-left: 150px;
 }
 
 .project-div img {

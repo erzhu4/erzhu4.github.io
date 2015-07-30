@@ -25,7 +25,7 @@
     } else if (object instanceof Galaxy.Ship) {
       this.ships.push(object);
     } else {
-      throw "";
+      throw "um";
     }
   };
 
