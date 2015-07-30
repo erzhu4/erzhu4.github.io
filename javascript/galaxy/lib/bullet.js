@@ -4,6 +4,7 @@
   }
 
   var Bullet = Galaxy.Bullet = function (options) {
+    this.game = options.game;
     var sprite = new Image();
     sprite.src = "./images/missile.png";
     options.radius = Bullet.RADIUS;
@@ -19,6 +20,7 @@
 
   Bullet.prototype.collideWith = function (otherObject) {
     if (otherObject instanceof Galaxy.Enemy) {
+      this.game.addExplosion(this.pos);	
       this.remove();
       otherObject.remove();
       $(".galaxy-score").html(parseInt($(".galaxy-score").html()) + 1);

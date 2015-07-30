@@ -4,6 +4,7 @@
   }
 
   var Enemy = Galaxy.Enemy = function (options) {
+    this.game = options.game;
     var sprite = new Image();
     sprite.src = "./images/enemy.gif";
     options.color = Enemy.COLOR;

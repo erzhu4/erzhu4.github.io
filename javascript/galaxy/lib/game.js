@@ -7,7 +7,7 @@
     this.Galaxy = [];
     this.bullets = [];
     this.ships = [];
-
+    this.explosions = [];
     this.addGalaxy();
   };
 
@@ -45,8 +45,15 @@
     return ship;
   };
 
+  Game.prototype.addExplosion = function (pos) {
+  	if (this.explosions.length > 8){
+  		this.explosions.shift(1);
+  	}
+  	this.explosions.push(new Galaxy.Explosion(pos, this))
+  };
+
   Game.prototype.allObjects = function () {
-    return [].concat(this.ships, this.Galaxy, this.bullets);
+    return [].concat(this.ships, this.Galaxy, this.bullets, this.explosions);
   };
 
   Game.prototype.checkCollisions = function () {

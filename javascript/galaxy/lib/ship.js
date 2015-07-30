@@ -21,14 +21,22 @@
 
   Ship.prototype.fireBullet = function () {
     var bulletVel = [0, -25];
-    var bullet = new Galaxy.Bullet({
+    var bullet1 = new Galaxy.Bullet({
       pos: this.pos,
       vel: bulletVel,
       color: this.color,
       game: this.game
     });
 
-    this.game.add(bullet);
+    var bullet2 = new Galaxy.Bullet({
+      pos: [this.pos[0] + 35, this.pos[1]],
+      vel: bulletVel,
+      color: this.color,
+      game: this.game
+    });
+
+    this.game.add(bullet1);
+    this.game.add(bullet2);
   };
 
   Ship.prototype.power = function (impulse) {
