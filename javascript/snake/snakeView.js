@@ -28,16 +28,17 @@ View.prototype.setup = function(){
 
 View.prototype.bindKeys = function() {
 	$(document).on("keydown", function(event){
-		if (event.keyCode === 87) {
+		event.preventDefault();
+		if (event.keyCode === 38) {
 			this.board.snake.turn('N');
 		};
-		if (event.keyCode === 65) {
+		if (event.keyCode === 37) {
 			this.board.snake.turn('W');
 		}
-		if (event.keyCode === 68) {
+		if (event.keyCode === 39) {
 			this.board.snake.turn('E');
 		}
-		if (event.keyCode === 83) {
+		if (event.keyCode === 40) {
 			this.board.snake.turn('S');
 		};
 	}.bind(this))

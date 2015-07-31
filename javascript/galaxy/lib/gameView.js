@@ -13,21 +13,23 @@
       // a
       $(document).on("keydown", function (event) {
         // a
-        if (event.keyCode === 65){
+        event.preventDefault();
+        if (event.keyCode === 37 || event.keyCode === 65){
           ship.power([-1, 0]);
         }
         //d
-        if (event.keyCode === 68){
+        if (event.keyCode === 39 || event.keyCode === 68){
           ship.power([1, 0]);
         }
 
-        if (event.keyCode === 80){
+        if (event.keyCode === 32 || event.keyCode === 80){
           ship.fireBullet();
         }
       });
 
     $(document).on("keyup", function (event) {
-      if ((event.keyCode === 65) || (event.keyCode === 68)){
+      event.preventDefault();
+      if (event.keyCode === 37 || event.keyCode === 39 ||     event.keyCode === 68 || event.keyCode === 65){
         ship.slowDown();
       }
     });
