@@ -8,7 +8,7 @@
   	this.hp = 15;
     var sprite = new Image();
     sprite.src = "./images/enemy.gif";
-    this.pos = [Math.random() * Galaxy.Game.DIM_X, 1];
+    this.pos = [50 + Math.random() * 0.75 * Galaxy.Game.DIM_X, 1];
     this.radius = 100;
     this.vel = [0, 2];
     this.dem = 250;

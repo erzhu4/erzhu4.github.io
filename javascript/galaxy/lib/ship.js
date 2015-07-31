@@ -9,27 +9,27 @@
     options.radius = Ship.RADIUS;
     options.vel = options.vel || [0, 0];
     options.color = "#999999";
-    options.dem = 50;
+    options.dem = 60;
     options.sprite = sprite;
 
     Galaxy.MovingObject.call(this, options);
   };
 
-  Ship.RADIUS = 20;
+  Ship.RADIUS = 30;
 
   Galaxy.Util.inherits(Ship, Galaxy.MovingObject);
 
   Ship.prototype.fireBullet = function () {
     var bulletVel = [this.vel[0] / 2, -25];
     var bullet1 = new Galaxy.Bullet({
-      pos: [this.pos[0] - 20, this.pos[1]],
+      pos: [this.pos[0] - 20, this.pos[1] - 5],
       vel: bulletVel,
       color: this.color,
       game: this.game
     });
 
     var bullet2 = new Galaxy.Bullet({
-      pos: [this.pos[0] + 20, this.pos[1]],
+      pos: [this.pos[0] + 20, this.pos[1] - 5],
       vel: bulletVel,
       color: this.color,
       game: this.game
