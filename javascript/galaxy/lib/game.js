@@ -16,7 +16,7 @@
   };
 
   Game.BG_COLOR = "#000000";
-  Game.DIM_X = 400;
+  Game.DIM_X = 500;
   Game.DIM_Y = 600;
   Game.FPS = 32;
 
