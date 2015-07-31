@@ -27,9 +27,6 @@
       $(".galaxy-score").html(parseInt($(".galaxy-score").html()) + 1);
       if (parseInt($(".galaxy-score").html()) % 50 === 0) {
         this.game.addEnemies();
-      }
-
-      if (parseInt($(".galaxy-score").html()) % 100 === 0) {
         this.game.addBigEnemy();
       }
     }

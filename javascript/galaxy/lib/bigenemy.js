@@ -16,15 +16,15 @@
   };
 
   	BigEnemy.prototype.move = function () {
-		this.pos = [this.pos[0] + this.vel[0], this.pos[1] + this.vel[1]];
+    this.pos = [this.pos[0] + this.vel[0], this.pos[1] + this.vel[1]];
 
 		if (this.hp < 1){
       this.game.addBigExplosion(this.pos);
-			this.game.bigEnemies = [];
+			this.game.remove(this);
 		}
 		if (this.game.isOutOfBounds(this.pos)) {
-			this.game.BigEnemies = [];
-		  }
+			  this.game.remove(this);
+  	}
 	};
 
 	BigEnemy.prototype.draw = function (ctx) {
