@@ -7,7 +7,10 @@
     this.Galaxy = [];
     this.bullets = [];
     this.ships = [];
-    this.explosions = [];
+  	this.explosions = [];
+    this.bigExplosions = [];
+    this.sparks = [];
+  	this.bigEnemies = [];
     this.numEnemies = 10;
     this.addEnemies();
   };
@@ -35,6 +38,10 @@
     }
   };
 
+  Game.prototype.addBigEnemy = function () {
+    this.bigEnemies[0] = new Galaxy.BigEnemy( {game: this} );
+  };
+
   Game.prototype.addShip = function () {
     var ship = new Galaxy.Ship({
       pos: [Galaxy.Game.DIM_X/2, -550],
@@ -46,14 +53,28 @@
   };
 
   Game.prototype.addExplosion = function (pos) {
-  	if (this.explosions.length > 8){
+  	if (this.explosions.length > 10){
   		this.explosions.shift(1);
   	}
   	this.explosions.push(new Galaxy.Explosion(pos, this))
   };
 
+  Game.prototype.addBigExplosion = function (pos) {
+    if (this.bigExplosions.length > 2){
+      this.bigExplosions.shift(1);
+    }
+    this.bigExplosions.push(new Galaxy.BigExplosion(pos, this))
+  };
+
+  Game.prototype.addSpark = function (pos) {
+    if (this.sparks.length > 8){
+      this.sparks.shift(1);
+    }
+    this.sparks.push(new Galaxy.Spark(pos, this));
+  };
+
   Game.prototype.allObjects = function () {
-    return [].concat(this.ships, this.Galaxy, this.bullets, this.explosions);
+    return [].concat(this.ships, this.Galaxy, this.bullets, this.explosions, this.bigEnemies, this.sparks, this.bigExplosions);
   };
 
   Game.prototype.checkCollisions = function () {

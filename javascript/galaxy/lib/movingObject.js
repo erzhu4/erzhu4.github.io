@@ -18,7 +18,7 @@
   };
 
   MovingObject.prototype.draw = function (ctx) {
-    ctx.drawImage(this.sprite, this.pos[0], this.pos[1], this.dem, this.dem);
+    ctx.drawImage(this.sprite, this.pos[0] - this.dem /2, this.pos[1] - this.dem / 2, this.dem, this.dem);
   };
 
   MovingObject.prototype.isCollidedWith = function (otherObject) {

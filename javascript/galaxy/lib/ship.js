@@ -20,16 +20,16 @@
   Galaxy.Util.inherits(Ship, Galaxy.MovingObject);
 
   Ship.prototype.fireBullet = function () {
-    var bulletVel = [0, -25];
+    var bulletVel = [this.vel[0] / 2, -25];
     var bullet1 = new Galaxy.Bullet({
-      pos: this.pos,
+      pos: [this.pos[0] - 20, this.pos[1]],
       vel: bulletVel,
       color: this.color,
       game: this.game
     });
 
     var bullet2 = new Galaxy.Bullet({
-      pos: [this.pos[0] + 35, this.pos[1]],
+      pos: [this.pos[0] + 20, this.pos[1]],
       vel: bulletVel,
       color: this.color,
       game: this.game
@@ -37,8 +37,7 @@
 
     this.game.add(bullet1);
     this.game.add(bullet2);
-  };
-
+  }
   Ship.prototype.slowDown = function () {
     this.vel[0] = 0;
   };
