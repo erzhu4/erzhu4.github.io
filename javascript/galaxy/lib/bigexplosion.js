@@ -14,7 +14,7 @@
 
 	BigExplosion.prototype.move = function () {
 		if (this.dem > 640) {
-			this.sprite.src = "";
+			this.game.remove(this);
 		} else {
 			this.dem += 70;
 			this.pos[0] -= 35;
