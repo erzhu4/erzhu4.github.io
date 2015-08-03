@@ -10,7 +10,10 @@
 		this.sprite = new Image();
 		this.sprite.src = "./images/puff.png";
 		this.dem = 10;
+    Galaxy.ExpandingObject.call(this);
 	};
+  
+  Galaxy.Util.inherits(Puff, Galaxy.ExpandingObject);
 
 	Puff.prototype.move = function () {
 		if (this.dem > 60) {

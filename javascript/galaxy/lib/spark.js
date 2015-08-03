@@ -10,7 +10,10 @@
 		this.sprite = new Image();
 		this.sprite.src = "./images/spark.png";
 		this.dem = 10;
+    Galaxy.ExpandingObject.call(this);
 	};
+
+  Galaxy.Util.inherits(Spark, Galaxy.ExpandingObject);
 
 	Spark.prototype.move = function () {
 		if (this.dem > 60) {
@@ -21,14 +24,5 @@
 			this.pos[1] -= 5;
 		}
 	};
-
-	Spark.prototype.draw = function (ctx) {
-		ctx.drawImage(this.sprite, this.pos[0], this.pos[1], this.dem, this.dem);
-	};
-
-	Spark.prototype.isCollidedWith = function (obj) {
-		return false;
-	};
-
 
  })();
