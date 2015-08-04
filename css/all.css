@@ -15,6 +15,7 @@ form, fieldset, label, article, footer, small {
 }
 
 body{
+  font-family: sans-serif;
   background-image: url(../images/background.jpg);
 }
 
@@ -49,13 +50,21 @@ h3 {
 
 .top-bar {
   text-align: center;
+  position: fixed;
+  width: 100%;
   height: 50px;
-  background: lightblue;
+  background: gray;
 }
 
 .top-bar a {
+  color: white;
   margin: 30px;
 }
+
+.top-bar a:hover {
+  font-style: italic;
+}
+
 
 .top-bar .bar-right {
   margin: auto;
@@ -70,6 +79,7 @@ h3 {
 /*begin intro panel*/
 .intro-panel {
   padding: 40px;
+  padding-top: 70px;
   background-size: cover;
   background-image: url(../images/sky.jpg);
   height: 500px;
