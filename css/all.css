@@ -193,9 +193,10 @@ h3 {
 
 .box {
   z-index: 10;
+  border: 1px black solid;
   float: left;
-  width: 100px;
-  height: 100px;
+  width: 98px;
+  height: 98px;
   background: red;
   text-align: center;
   opacity: 1;
