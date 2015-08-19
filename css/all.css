@@ -178,7 +178,7 @@ h3 {
 }
 
 .cat-container {
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/So_happy_smiling_cat.jpg/411px-So_happy_smiling_cat.jpg);
+  background-image: url(../images/happycat.jpg);
   background-size: cover;
   position: relative;
   margin: auto;
