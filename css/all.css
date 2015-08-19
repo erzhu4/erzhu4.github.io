@@ -176,3 +176,37 @@ h3 {
 .tech-logo {
   margin: 20px;
 }
+
+.cat-container {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/So_happy_smiling_cat.jpg/411px-So_happy_smiling_cat.jpg);
+  background-size: cover;
+  position: relative;
+  margin: auto;
+  width: 400px;
+  height: 500px;
+}
+
+.cat-container img {
+  position: absolute;
+  width: 100%;
+}
+
+.box {
+  z-index: 10;
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: red;
+  text-align: center;
+  opacity: 1;
+}
+
+.box:hover {
+  cursor: pointer;
+  background: pink;
+}
+
+.box-reveal {
+  transition: 0.5s;
+  opacity: 0;
+}

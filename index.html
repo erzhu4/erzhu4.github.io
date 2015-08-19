@@ -44,7 +44,7 @@
     <div class="picture-div"><img src="./images/eric-zhu.jpg"></div>
     <h1>Eric Zhu</h1>
     <div class="intro-info">
-      Hi, and thanks for stopping by. I am Eric, a web developer with a passion for problem solving and creating new things. I specialize in Rails, JavaScript, and Backbone. Please feel free to explore my portfolio!
+      Hi, and thanks for stopping by. I am Eric, a web developer with a passion for front-end and UI development. Please feel free to explore my portfolio!
     </div>
   </div>
 
@@ -52,9 +52,8 @@
 
 
     <div class="projects-panel group">
-      <h2 style="font-size: 40px">Projects</h2>
 
-      <h2>Web and Code Intensive</h2>
+      <h2>Code Projects</h2>
 
       <div class="project-div">
         <h3>LynxIn</h3>
@@ -71,7 +70,8 @@
 
       <div class="project-div">
         <h3>Terminal Chess</h3>
-        <img src="./images/knight.png"><br>
+        <a href="https://github.com/erzhu4/Chess">
+        <img src="./images/knight.png"></a><br>
         <div class="links">
           <a href="https://github.com/erzhu4/Chess">Github</a>
         </div>
@@ -180,6 +180,33 @@
 
     </div>
 
+    <div class="cat-reveal">
+      <h1>Kitty Click!</h1>
+      <div class="cat-container">
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+        <div class="box"><div style="margin-top:40px">Click!</div></div>
+      </div>
+
+    </div>
+
   </div>
 </body>
 
@@ -210,7 +237,7 @@
       canvasEl.height = Galaxy.Game.DIM_Y;
       var ctx = canvasEl.getContext("2d");
       var game = new Galaxy.Game();
-      var galview = new Galaxy.GameView(game, ctx)
+      var galview = new Galaxy.GameView(game, ctx);
 
     $(".galaxy-start-button").on("click", function (event) {
       galview.start();
@@ -248,6 +275,10 @@
       $(".galaxy-div").removeClass("hide");
 
     });
+
+    $(".box").on("click", function (event) {
+      $(event.currentTarget).toggleClass("box-reveal");
+    })
 
   })();
 </script>
