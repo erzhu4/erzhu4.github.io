@@ -1,10 +1,14 @@
-app.controller("toolsController", ["$scope", function($scope){
+app.controller("toolsController", ["$scope",
 
-	$scope.text = "default text"
+	function($scope){
 
-	$scope.projectClick = function($index){
-		$scope.text = "clicked";
+		$scope.text = "ERIC ZHU";
 
-	};
+		$scope.show = function(data){
+			$scope.text = data;
+			$(".section").removeClass("show");
+			$("." + data +"-container").addClass("show");
+		};
 
-}]);
+	}
+]);

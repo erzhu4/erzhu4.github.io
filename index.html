@@ -2,22 +2,171 @@
 <html>
 <head>
 	<link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/games.css">
   <script type="application/javascript" src="jquery.js"></script>
   <script src="angular.min.js"></script>
-  <script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
   <script src="./javascript/app.js"></script>
+  <script src="./javascript/controllers/toolscontroller.js"></script>
+  <script type="application/javascript" src="javascript/galaxy/lib/util.js"></script>
+  <script type="application/javascript" src="javascript/galaxy/lib/movingObject.js"></script>
+  <script type="application/javascript" src="javascript/galaxy/lib/expandingObject.js"></script>
+  <script type="application/javascript" src="javascript/galaxy/lib/enemy.js"></script>
+  <script type="application/javascript" src="javascript/galaxy/lib/ship.js"></script>
+  <script type="application/javascript" src="javascript/galaxy/lib/bullet.js"></script>
+  <script type="application/javascript" src="javascript/galaxy/lib/game.js"></script>
+  <script type="application/javascript" src="javascript/galaxy/lib/gameView.js"></script>
+  <script type="application/javascript" src="javascript/galaxy/lib/explosion.js"></script>
+  <script type="application/javascript" src="javascript/galaxy/lib/bigenemy.js"></script>
+  <script type="application/javascript" src="javascript/galaxy/lib/bigexplosion.js"></script>
+  <script type="application/javascript" src="javascript/galaxy/lib/spark.js"></script>
+  <script type="application/javascript" src="javascript/galaxy/lib/puff.js"></script>
+  <script src="javascript/snake/snake.js"></script>
+  <script src="javascript/snake/board.js"></script>
+  <script src="javascript/snake/snakeView.js"></script>
 </head>
 
-<body><div class="everything-container group" ng-app="portfolioApp">
+<body ng-app="portfolioApp"><div class="everything-container group">
 
 	<div class="left-tool-bar" ng-controller="toolsController">{{text}}
-		<div class="projects-button" ng-click="projectClick(index)">{{text}}</div>
+		<div class="tool-button" ng-click="show('home')">About</div>
+		<div class="tool-button" ng-click="show('projects')">Sample Projects</div>
+		<div class="tool-button" ng-click="show('skills')">Skills/Technologies</div>
+		<div class="tool-button" ng-click="show('games')">Github</div>
+		<div class="tool-button" ng-click="show('games')">LinkedIn</div>
+		<div class="tool-button" ng-click="show('games')">Resume</div>
 	</div>
 
-	<div class="main-container"> main container</div>
+	<div class="main-container">
 
-</div></body>
-	<script src="./javascript/controllers/toolscontroller.js"></script>
-  <script src="./javascript/controllers/homecontroller.js"></script>
-  <script src="./javascript/controllers/projectcontroller.js"></script>
+		<div class="section home-container show">
+		    <h1>Eric Zhu</h1>
+		    <div class="intro-info">
+		      Hi, and thanks for stopping by. I am Eric, a web developer with a passion for front-end and UI development. Please feel free to explore my portfolio!
+		    </div>
+		</div>
+
+		<div class="section projects-container">
+			<h2>Sample Projects</h2>
+			 <div class="project-div"> <!-- project -->
+        <h3>LynxIn</h3>
+        <a href="http://www.lynxin.xyz/">
+        <img class="project-img" src="./images/lynxinsn.png"></a><br>
+        <div class="links">
+          <a href="http://www.lynxin.xyz/">Link</a>
+          <a href="https://github.com/erzhu4/LinkedIn-Clone">Github</a>
+        </div>
+        <div class="project-info">
+          Web application inspired by the popular networking site LinkedIn.
+        </div>
+      </div>
+
+			<div class="project-div"><!--project -->
+        <h3>Galaxy</h3>
+        <img class="galaxy-play project-img" src="./images/galaxysn.png"><br>
+        <div class="links">
+          <a href="https://github.com/erzhu4/Galaxy">Github</a>
+        </div>
+        <div class="project-info">
+          A simple 2D canvas game inspired by the arcade game Galaxy.
+        </div>
+        <button class="galaxy-play play-button">Play</button>
+      </div>
+
+      <div class="project-div"> <!-- Project -->
+        <h3>Snake</h3>
+        <img class="snake-play project-img" src="./images/snakesn.png"><br>
+        <div class="links">
+          <a href="https://github.com/erzhu4/SnakeGame">Github</a>
+        </div>
+        <div class="project-info">
+          The popular game snake made with JavaScript and jQuery.
+        </div>
+        <button class="snake-play play-button">Play</button>
+      </div>
+
+		</div>
+
+		<div class="section skills-container">
+		<h2 class="skill-header">Skills/Technologies</h2>
+      <div class="tech-logo">
+        <img src="./images/rubyonrails.png">
+      </div>
+      <div class="tech-logo">
+        <img src="./images/js.png">
+      </div>
+      <div class="tech-logo">
+        <img src="./images/jquery.jpg">
+      </div>
+      <div class="tech-logo">
+        <img src="./images/backbone.jpeg">
+      </div>
+      <div class="css-logo">
+        <img src="./images/CSS.png">
+      </div>
+      <div class="tech-logo">
+        <img src="./images/spice.jpg">
+      </div>
+      <div class="tech-logo">
+        <img src="./images/java.jpg">
+      </div>
+		</div>
+
+</div>
+
+	<div class="black-body">
+		<div class="galaxy-container game-container">
+			<div class="control-info">
+			  CONTROLS<br>
+			  <button class="key">A</button>: Left<br>
+			  <button class="key">D</button>: Right<br>
+			  <button class="key">P</button>: Shoot<br>
+			  OR<br>
+			  <button class="key">Left Arrow</button>: Left<br>
+			  <button class="key">Right Arrow</button>: Right<br>
+			  <button class="key">SPACE</button>: Shoot<br>
+			</div>
+			<button class="galaxy-start-button">Start</button>
+			<div class="score-container">Score: <div class="galaxy-score">0</div></div>
+			<canvas></canvas><br>
+			<div class="galaxy-game-over hide">
+			  GAME OVER!!!!!
+			  <button class="galaxy-reset reset-button">Restart</button>
+			  <button class="exit-button">Exit</button>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+
+
+  <script type="application/javascript">
+
+    $(function(){
+      $(".galaxy-play").on("click", function () {
+        $(".black-body").addClass("show-black-body");
+        $(".galaxy-container").addClass("show-game")
+      });
+      $(".galaxy-start-button").on("click", function (event) {
+        galview.start();
+        $(event.currentTarget).addClass("hide");
+      });
+      $(".galaxy-reset").on("click", function () {
+        galview.start();
+      });
+      $(".exit-button").on("click", function (){
+        $(".game-container").removeClass("show-game");
+        $(".black-body").removeClass("show-black-body");
+      });
+
+      var canvasEl = document.getElementsByTagName("canvas")[0];
+      canvasEl.width = Galaxy.Game.DIM_X;
+      canvasEl.height = Galaxy.Game.DIM_Y;
+      var ctx = canvasEl.getContext("2d");
+      var game = new Galaxy.Game();
+      var galview = new Galaxy.GameView(game, ctx);
+    })
+
+  </script>
+
 </html>

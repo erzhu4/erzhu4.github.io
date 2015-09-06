@@ -1,5 +1,5 @@
 html, body, header, nav, ul, li,
-strong, main, section, img, div, p,
+strong, section, img, div, p,
 form, fieldset, label, article, footer, small {
   margin: 0;
   padding: 0;
@@ -43,23 +43,77 @@ h3 {
   display: block;
 }
 
-.hide {
+.section {
   display: none;
+  height: 100%;
+  width: 100%;
+}
+
+.show {
+  display: block;
 }
 
 .everything-container {
   position: relative;
+  background-image: url(http://www.pageresource.com/wallpapers/wallpaper/black-and-white-shark-animals_61497.jpg);
+  background-attachment : fixed;
+  background-size: cover;
 }
 
 .left-tool-bar {
   position: fixed;
   float: left;
-  width: 200px;
+  width: 20%;
   background: red;
   height: 100%;
 }
 
 .main-container {
   float:left;
-  margin-left: 200px;
+  margin-left: 10%;
+  height: 100%;
+  width: 90%;
 }
+
+.intro-info {
+  margin-left: 200px;
+  margin-right: 20px;
+}
+
+.tool-button {
+  background: white;
+  width: 100%;
+}
+
+.projects-container {
+  text-align: center;
+}
+
+.project-img {
+  width: 300px;
+}
+
+.project-div {
+  margin-top: 50px;
+}
+
+.tech-logo {
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+
+.tech-logo img {
+  width: 100%;
+}
+
+.css-logo img {
+  width: 100%;
+}
+
+.css-logo {
+  float: left;
+  width: 200px;
+  height: 100px;
+}
+
