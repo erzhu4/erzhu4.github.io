@@ -16,6 +16,9 @@ form, fieldset, label, article, footer, small {
 
 body{
   font-family: sans-serif;
+  background-image: url(../images/background.jpg);
+  background-attachment : fixed;
+  background-size: cover;
 }
 
 h1 {
@@ -27,6 +30,7 @@ h1 {
 }
 
 h2 {
+  color:#FF6600;
   font-family: sans-serif;
   font-style: italic;
   text-align: center;
@@ -36,6 +40,16 @@ h3 {
   font-family: fantasy;
   text-align: center;
 }
+
+.picture-div {
+  text-align: center;
+}
+
+.picture-div img {
+  width: 60px;
+  border-radius: 30px;
+}
+
 
 .group:after {
   content: "";
@@ -55,17 +69,28 @@ h3 {
 
 .everything-container {
   position: relative;
-  background-image: url(http://www.pageresource.com/wallpapers/wallpaper/black-and-white-shark-animals_61497.jpg);
-  background-attachment : fixed;
-  background-size: cover;
+  width: 100%;
 }
 
 .left-tool-bar {
   position: fixed;
   float: left;
   width: 20%;
-  background: red;
+  background: #637D74;
   height: 100%;
+}
+
+.tool-button {
+  text-align: center;
+  font-size: 20px;
+  font-style: oblique;
+  margin-top: 30px;
+}
+
+.tool-button:hover {
+  text-decoration: underline;
+  font-size: 21px;
+  cursor: pointer;
 }
 
 .main-container {
@@ -73,15 +98,20 @@ h3 {
   margin-left: 10%;
   height: 100%;
   width: 90%;
+  color: #087099;
+  text-shadow: 2px 2px 2px white;
 }
 
 .intro-info {
   margin-left: 200px;
   margin-right: 20px;
+  font-size: 30px;
+  font-style: oblique;
+  background: #E6E6E6;
 }
 
 .tool-button {
-  background: white;
+  color: white;
   width: 100%;
 }
 
@@ -101,6 +131,7 @@ h3 {
   float: left;
   width: 100px;
   height: 100px;
+  margin: 20px;
 }
 
 .tech-logo img {
@@ -117,3 +148,6 @@ h3 {
   height: 100px;
 }
 
+.skills-container {
+  margin-left: 200px;
+}

@@ -27,26 +27,34 @@
 
 <body ng-app="portfolioApp"><div class="everything-container group">
 
-	<div class="left-tool-bar" ng-controller="toolsController">{{text}}
+	<div class="left-tool-bar" ng-controller="toolsController">
+    <h2>Eric Zhu</h2>
+    <div class="picture-div"><img src="./images/eric-zhu.jpg"></div>
 		<div class="tool-button" ng-click="show('home')">About</div>
 		<div class="tool-button" ng-click="show('projects')">Sample Projects</div>
 		<div class="tool-button" ng-click="show('skills')">Skills/Technologies</div>
-		<div class="tool-button" ng-click="show('games')">Github</div>
-		<div class="tool-button" ng-click="show('games')">LinkedIn</div>
-		<div class="tool-button" ng-click="show('games')">Resume</div>
+    <a href="https://github.com/erzhu4">
+		  <div class="tool-button" ng-click="show('games')">Github</div>
+    </a>
+    <a href="https://www.linkedin.com/pub/eric-zhu/92/b08/670">
+		  <div class="tool-button" ng-click="show('games')">LinkedIn</div>
+    </a>
+    <a href="https://drive.google.com/open?id=0B47kBMuebdfJYlVJNWpiZE1uOVE">
+		  <div class="tool-button" ng-click="show('games')">Resume</div>
+    </a>
 	</div>
 
 	<div class="main-container">
 
 		<div class="section home-container show">
-		    <h1>Eric Zhu</h1>
+      <h1>About Me</h1>
 		    <div class="intro-info">
-		      Hi, and thanks for stopping by. I am Eric, a web developer with a passion for front-end and UI development. Please feel free to explore my portfolio!
+		      Hi, and thanks for stopping by. I am Eric, a web developer currently working for a software company called Listenloop. I have a background in Electrical Engineering and passion for front-end and UI development. Please feel free to explore my portfolio!
 		    </div>
 		</div>
 
 		<div class="section projects-container">
-			<h2>Sample Projects</h2>
+			<h1>Sample Projects</h1>
 			 <div class="project-div"> <!-- project -->
         <h3>LynxIn</h3>
         <a href="http://www.lynxin.xyz/">
@@ -87,7 +95,7 @@
 		</div>
 
 		<div class="section skills-container">
-		<h2 class="skill-header">Skills/Technologies</h2>
+		<h1>Skills/Technologies</h1>
       <div class="tech-logo">
         <img src="./images/rubyonrails.png">
       </div>
@@ -108,6 +116,9 @@
       </div>
       <div class="tech-logo">
         <img src="./images/java.jpg">
+      </div>
+      <div class="tech-logo">
+        <img src="./images/angular.png">
       </div>
 		</div>
 
