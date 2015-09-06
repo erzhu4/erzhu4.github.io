@@ -1,5 +1,5 @@
 html, body, header, nav, ul, li,
-strong, section, img, div, p,
+strong, a, section, img, div, p,
 form, fieldset, label, article, footer, small {
   margin: 0;
   padding: 0;
