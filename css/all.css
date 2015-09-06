@@ -103,11 +103,11 @@ h3 {
 }
 
 .intro-info {
-  margin-left: 200px;
-  margin-right: 20px;
+  margin-right: 40px;
+  width: 700px;
+  float: right;
   font-size: 30px;
   font-style: oblique;
-  background: #E6E6E6;
 }
 
 .tool-button {
