@@ -117,15 +117,15 @@
 		<div class="galaxy-container game-container">
 			<div class="control-info">
 			  CONTROLS<br>
-			  <button class="key">A</button>: Left<br>
-			  <button class="key">D</button>: Right<br>
-			  <button class="key">P</button>: Shoot<br>
-			  OR<br>
-			  <button class="key">Left Arrow</button>: Left<br>
-			  <button class="key">Right Arrow</button>: Right<br>
-			  <button class="key">SPACE</button>: Shoot<br>
+			  <button class="key">A</button>: Left
+			  <button class="key">D</button>: Right
+			  <button class="key">P</button>: Shoot
+			  <br>OR<br>
+			  <button class="key">Left Arrow</button>: Left
+			  <button class="key">Right Arrow</button>: Right
+			  <button class="key">SPACE</button>: Shoot
 			</div>
-			<button class="galaxy-start-button">Start</button>
+			<button class="galaxy-start-button start-button">Start</button>
 			<div class="score-container">Score: <div class="galaxy-score">0</div></div>
 			<canvas></canvas><br>
 			<div class="galaxy-game-over hide">
@@ -134,6 +134,25 @@
 			  <button class="exit-button">Exit</button>
 			</div>
 		</div>
+
+
+      <div class="snake-container game-container">
+        <div class="control-info">
+          CONTROLS<br>
+          <button class="key">Left Arrow</button>: Left<br>
+          <button class="key">Right Arrow</button>: Right<br>
+          <button class="key">Up Arrow</button>: Up<br>
+          <button class="key">Down Arrow</button>: Down<br>
+        </div>
+        <button class="start-snake start-button">Start</button>
+        <div id="snake"></div>
+        <div class="snake-game-over hide">
+          GAME OVER!!!!!
+          <button class="reset-snake reset-button">Restart</button>
+          <button class="exit-button">Exit</button>
+        </div>
+      </div>
+
 	</div>
 
 </body>
@@ -144,6 +163,7 @@
 
     $(function(){
       $(".galaxy-play").on("click", function () {
+        $(".game-container").removeClass("show-game");
         $(".black-body").addClass("show-black-body");
         $(".galaxy-container").addClass("show-game")
       });
@@ -157,6 +177,29 @@
       $(".exit-button").on("click", function (){
         $(".game-container").removeClass("show-game");
         $(".black-body").removeClass("show-black-body");
+      });
+
+      var board = new SnakeGame.Board();
+      var snakeview = new SnakeGame.View(board, $('#snake'));
+
+      $(".snake-play").on("click", function(event) {
+        $(".game-container").removeClass("show-game");
+        $(".black-body").addClass("show-black-body");
+        $(".snake-container").addClass("show-game");
+      });
+
+      $(".start-snake").on("click", function (event) {
+        snakeview.startGame();
+        $(event.currentTarget).addClass("hide");
+        $(".reset-snake").removeClass("hide");
+      });
+
+      $(".reset-snake").on("click", function (event){
+        $(".snake-game-over").addClass("hide");
+        $("#snake").html("");
+        board = new SnakeGame.Board();
+        snakeview = new SnakeGame.View(board, $('#snake'));
+        snakeview.startGame();
       });
 
       var canvasEl = document.getElementsByTagName("canvas")[0];

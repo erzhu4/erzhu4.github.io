@@ -20,7 +20,7 @@
 
   Game.BG_COLOR = "#000000";
   Game.DIM_X = 500;
-  Game.DIM_Y = 600;
+  Game.DIM_Y = 500;
   Game.FPS = 32;
 
   Game.prototype.add = function (object) {
@@ -50,7 +50,7 @@
 
   Game.prototype.addShip = function () {
     var ship = new Galaxy.Ship({
-      pos: [Galaxy.Game.DIM_X/2, -550],
+      pos: [Galaxy.Game.DIM_X/2, -450],
       game: this
     });
 
