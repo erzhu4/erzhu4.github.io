@@ -8,18 +8,19 @@
     this.timerId = null;
   };
 
-  GameView.prototype.bindKeyHandlers = function () {
+ GameView.prototype.bindKeyHandlers = function () {
       var ship = this.ship;
       // a
       $(document).on("keydown", function (event) {
+		  console.log("keydown");
         // a
         event.preventDefault();
         if (event.keyCode === 37 || event.keyCode === 65){
-          ship.power([-1.2, 0]);
+          ship.power([-1, 0]);
         }
         //d
         if (event.keyCode === 39 || event.keyCode === 68){
-          ship.power([1.2, 0]);
+          ship.power([1, 0]);
         }
 
         if (event.keyCode === 32 || event.keyCode === 80){
@@ -29,8 +30,12 @@
 
     $(document).on("keyup", function (event) {
       event.preventDefault();
-      if (event.keyCode === 37 || event.keyCode === 39 ||     event.keyCode === 68 || event.keyCode === 65){
-        ship.slowDown();
+	  console.log("keyup");
+      if (event.keyCode === 37 || event.keyCode === 65){
+        if (ship.vel[0] < 0) {ship.slowDown();}
+      }
+	  if (event.keyCode === 39 || event.keyCode === 68 ){
+        if (ship.vel[0] > 0) {ship.slowDown();}
       }
     });
   };
