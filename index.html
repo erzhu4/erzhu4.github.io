@@ -4,9 +4,6 @@
 	<link rel="stylesheet" href="css/all.css">
   <link rel="stylesheet" href="css/games.css">
   <script type="application/javascript" src="jquery.js"></script>
-  <script src="angular.min.js"></script>
-  <script src="./javascript/app.js"></script>
-  <script src="./javascript/controllers/toolscontroller.js"></script>
   <script type="application/javascript" src="javascript/galaxy/lib/util.js"></script>
   <script type="application/javascript" src="javascript/galaxy/lib/movingObject.js"></script>
   <script type="application/javascript" src="javascript/galaxy/lib/expandingObject.js"></script>
@@ -23,203 +20,133 @@
   <script src="javascript/snake/snake.js"></script>
   <script src="javascript/snake/board.js"></script>
   <script src="javascript/snake/snakeView.js"></script>
+  <script src="./javascript/app.js"></script>
 </head>
 
-<body ng-app="portfolioApp"><div class="everything-container group">
+<body>
+    <div class="everything-container group">
 
-	<div class="left-tool-bar" ng-controller="toolsController">
-    <h2>Eric Zhu</h2>
-    <div class="picture-div"><img src="./images/eric-zhu.jpg"></div>
-		<div class="tool-button" ng-click="show('home')">About</div>
-		<div class="tool-button" ng-click="show('projects')">Sample Projects</div>
-		<div class="tool-button" ng-click="show('skills')">Skills/Technologies</div>
-    <a href="https://github.com/erzhu4">
-		  <div class="tool-button" ng-click="show('games')">Github</div>
-    </a>
-    <a href="https://www.linkedin.com/pub/eric-zhu/92/b08/670">
-		  <div class="tool-button" ng-click="show('games')">LinkedIn</div>
-    </a>
-    <a href="https://drive.google.com/file/d/0B47kBMuebdfJcm1PSi1PWllEaHc/view?usp=sharing">
-		  <div class="tool-button" ng-click="show('games')">Resume</div>
-    </a>
-	</div>
-
-	<div class="main-container">
-
-		<div class="section home-container show">
-      <h1>About Me</h1>
-		    <div class="intro-info">
-		      Hi, and thanks for stopping by. I am Eric, a web developer currently working for a health care company called AbleTo. I have a background in Electrical Engineering and passion for front-end and UI development. Please feel free to explore my portfolio!
-		    </div>
-		</div>
-
-		<div class="section projects-container">
-			<h1>Sample Projects</h1>
-
-			<div class="project-div"><!--project -->
-        <h3>Galaxy</h3>
-        <img class="galaxy-play project-img" src="./images/galaxysn.png"><br>
-        <div class="links">
-          <a href="https://github.com/erzhu4/Galaxy">Github</a>
+        <div class="left-tool-bar">
+            <h2>Eric Zhu</h2>
+            <div class="picture-div"><img src="./images/eric-zhu.jpg"></div>
+                <div class="tool-button show-section" data-show="home">About</div>
+                <div class="tool-button show-section" data-show="projects">Fun and Games</div>
+                <div class="tool-button show-section" data-show="skills">Skills/Technologies</div>
+            <a target="_blank" href="https://github.com/erzhu4">
+                  <div class="tool-button">Github</div>
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/pub/eric-zhu/92/b08/670">
+                  <div class="tool-button">LinkedIn</div>
+            </a>
+            <a target="_blank" href="https://drive.google.com/file/d/0B47kBMuebdfJcm1PSi1PWllEaHc/view?usp=sharing">
+                  <div class="tool-button">Resume</div>
+            </a>
         </div>
-        <div class="project-info">
-          A simple 2D canvas game inspired by the arcade game Galaxy.
+
+        <div class="main-container">
+            <div class="section show" id="home-container">
+                <h1>About Me</h1>
+                <div class="intro-info">
+                    Hi, and thanks for stopping by. I am Eric, a full stack web developer currently working for a health care company AbleTo. I have a background in Electrical Engineering and passion for front-end and UI development. Please feel free to explore my portfolio!
+                </div>
+            </div>
+
+            <div class="section" id="projects-container">
+                <h1>Sample Projects</h1>
+                <div class="project-div"><!--project -->
+                    <h3>Galaxy</h3>
+                    <img class="galaxy-play project-img" src="./images/galaxysn.png"><br>
+                    <div class="links">
+                        <a target="_blank" href="https://github.com/erzhu4/Galaxy">Github</a>
+                    </div>
+                    <div class="project-info">
+                        A simple 2D canvas game inspired by the arcade game Galaxy.
+                    </div>
+                    <button class="galaxy-play play-butto my-buttonn">Play</button>
+                </div>
+                <div class="project-div"> <!-- Project -->
+                    <h3>Snake</h3>
+                    <img class="snake-play project-img" src="./images/snakesn.png"><br>
+                    <div class="links">
+                        <a target="_blank" href="https://github.com/erzhu4/SnakeGame">Github</a>
+                    </div>
+                    <div class="project-info">
+                        The popular game snake made with JavaScript and jQuery.
+                    </div>
+                    <button class="snake-play play-button my-button">Play</button>
+                </div>
+            </div>
+
+            <div class="section" id="skills-container">
+                <h1>Skills/Technologies</h1>
+                <div class="tech-logo">
+                    <img src="./images/rubyonrails.png">
+                </div>
+                <div class="tech-logo">
+                    <img src="./images/js.png">
+                </div>
+                <div class="tech-logo">
+                    <img src="./images/jquery.jpg">
+                </div>
+                <div class="tech-logo">
+                    <img src="./images/backbone.jpeg">
+                </div>
+                <div class="css-logo">
+                    <img src="./images/CSS.png">
+                </div>
+                <div class="tech-logo">
+                    <img src="./images/spice.jpg">
+                </div>
+                <div class="tech-logo">
+                    <img src="./images/java.jpg">
+                </div>
+                <div class="tech-logo">
+                    <img src="./images/angular.png">
+                </div>
+            </div>
+    </div>
+
+        <div class="black-body">
+            <div class="galaxy-container game-container">
+            <div class="control-info">
+                CONTROLS<br>
+                <button class="key">A</button>: Left
+                <button class="key">D</button>: Right
+                <button class="key">P</button>: Shoot
+                <br>OR<br>
+                <button class="key">Left Arrow</button>: Left
+                <button class="key">Right Arrow</button>: Right
+                <button class="key">SPACE</button>: Shoot
+            </div>
+                <button class="galaxy-start-button start-button">Start</button>
+                <div class="score-container">Score: <div class="galaxy-score">0</div></div>
+                <canvas></canvas><br>
+                <div class="galaxy-game-over hide">
+                    GAME OVER!!!!!
+                    <button class="galaxy-reset reset-button my-button">Restart</button>
+                    <button class="exit-button my-button">Exit</button>
+                </div>
+            </div>
+
+
+          <div class="snake-container game-container">
+            <div class="control-info">
+              CONTROLS<br>
+              <button class="key">Left Arrow</button>: Left<br>
+              <button class="key">Right Arrow</button>: Right<br>
+              <button class="key">Up Arrow</button>: Up<br>
+              <button class="key">Down Arrow</button>: Down<br>
+            </div>
+            <button class="start-snake start-button">Start</button>
+            <div id="snake"></div>
+            <div class="snake-game-over hide">
+              GAME OVER!!!!!
+              <button class="reset-snake reset-button my-button">Restart</button>
+              <button class="exit-button my-button">Exit</button>
+            </div>
+          </div>
         </div>
-        <button class="galaxy-play play-button">Play</button>
-      </div>
-
-      <div class="project-div"> <!-- Project -->
-        <h3>Snake</h3>
-        <img class="snake-play project-img" src="./images/snakesn.png"><br>
-        <div class="links">
-          <a href="https://github.com/erzhu4/SnakeGame">Github</a>
-        </div>
-        <div class="project-info">
-          The popular game snake made with JavaScript and jQuery.
-        </div>
-        <button class="snake-play play-button">Play</button>
-      </div>
-
-		</div>
-
-		<div class="section skills-container">
-		<h1>Skills/Technologies</h1>
-      <div class="tech-logo">
-        <img src="./images/rubyonrails.png">
-      </div>
-      <div class="tech-logo">
-        <img src="./images/js.png">
-      </div>
-      <div class="tech-logo">
-        <img src="./images/jquery.jpg">
-      </div>
-      <div class="tech-logo">
-        <img src="./images/backbone.jpeg">
-      </div>
-      <div class="css-logo">
-        <img src="./images/CSS.png">
-      </div>
-      <div class="tech-logo">
-        <img src="./images/spice.jpg">
-      </div>
-      <div class="tech-logo">
-        <img src="./images/java.jpg">
-      </div>
-      <div class="tech-logo">
-        <img src="./images/angular.png">
-      </div>
-		</div>
-
-</div>
-
-	<div class="black-body">
-		<div class="galaxy-container game-container">
-			<div class="control-info">
-			  CONTROLS<br>
-			  <button class="key">A</button>: Left
-			  <button class="key">D</button>: Right
-			  <button class="key">P</button>: Shoot
-			  <br>OR<br>
-			  <button class="key">Left Arrow</button>: Left
-			  <button class="key">Right Arrow</button>: Right
-			  <button class="key">SPACE</button>: Shoot
-			</div>
-			<button class="galaxy-start-button start-button">Start</button>
-			<div class="score-container">Score: <div class="galaxy-score">0</div></div>
-			<canvas></canvas><br>
-			<div class="galaxy-game-over hide">
-			  GAME OVER!!!!!
-			  <button class="galaxy-reset reset-button">Restart</button>
-			  <button class="exit-button">Exit</button>
-			</div>
-		</div>
-
-
-      <div class="snake-container game-container">
-        <div class="control-info">
-          CONTROLS<br>
-          <button class="key">Left Arrow</button>: Left<br>
-          <button class="key">Right Arrow</button>: Right<br>
-          <button class="key">Up Arrow</button>: Up<br>
-          <button class="key">Down Arrow</button>: Down<br>
-        </div>
-        <button class="start-snake start-button">Start</button>
-        <div id="snake"></div>
-        <div class="snake-game-over hide">
-          GAME OVER!!!!!
-          <button class="reset-snake reset-button">Restart</button>
-          <button class="exit-button">Exit</button>
-        </div>
-      </div>
-
-	</div>
-
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-67446650-1', 'auto');
-    ga('send', 'pageview');
-
-  </script>
-
+    </div>
 </body>
-
-
-
-  <script type="application/javascript">
-
-    $(function(){
-      $(".galaxy-play").on("click", function () {
-        $(".game-container").removeClass("show-game");
-        $(".black-body").addClass("show-black-body");
-        $(".galaxy-container").addClass("show-game")
-      });
-      $(".galaxy-start-button").on("click", function (event) {
-        galview.start();
-        $(event.currentTarget).addClass("hide");
-      });
-      $(".galaxy-reset").on("click", function () {
-        galview.start();
-      });
-      $(".exit-button").on("click", function (){
-        $(".game-container").removeClass("show-game");
-        $(".black-body").removeClass("show-black-body");
-      });
-
-      var board = new SnakeGame.Board();
-      var snakeview = new SnakeGame.View(board, $('#snake'));
-
-      $(".snake-play").on("click", function(event) {
-        $(".game-container").removeClass("show-game");
-        $(".black-body").addClass("show-black-body");
-        $(".snake-container").addClass("show-game");
-      });
-
-      $(".start-snake").on("click", function (event) {
-        snakeview.startGame();
-        $(event.currentTarget).addClass("hide");
-        $(".reset-snake").removeClass("hide");
-      });
-
-      $(".reset-snake").on("click", function (event){
-        $(".snake-game-over").addClass("hide");
-        $("#snake").html("");
-        board = new SnakeGame.Board();
-        snakeview = new SnakeGame.View(board, $('#snake'));
-        snakeview.startGame();
-      });
-
-      var canvasEl = document.getElementsByTagName("canvas")[0];
-      canvasEl.width = Galaxy.Game.DIM_X;
-      canvasEl.height = Galaxy.Game.DIM_Y;
-      var ctx = canvasEl.getContext("2d");
-      var game = new Galaxy.Game();
-      var galview = new Galaxy.GameView(game, ctx);
-    })
-
-  </script>
 
 </html>

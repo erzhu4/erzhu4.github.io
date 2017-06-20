@@ -115,7 +115,7 @@ h3 {
   width: 100%;
 }
 
-.projects-container {
+#projects-container {
   text-align: center;
 }
 
@@ -150,4 +150,9 @@ h3 {
 
 .skills-container {
   margin-left: 200px;
+}
+
+.my-button {
+  border-radius: 10px;
+  border-style:none;
 }
