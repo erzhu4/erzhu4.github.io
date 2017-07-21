@@ -137,20 +137,12 @@ h3 {
   width: 100px;
   height: 100px;
   margin: 20px;
+  overflow: hidden;
 }
 
 .tech-logo img {
   width: 100%;
-}
-
-.css-logo img {
-  width: 100%;
-}
-
-.css-logo {
-  float: left;
-  width: 200px;
-  height: 100px;
+  height: 100%;
 }
 
 .skills-container {
