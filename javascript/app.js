@@ -52,8 +52,7 @@ $(function(){
 
     $('.show-section').on('click', function(){
         var showSection = $(event.currentTarget).data('show');
-        $(".section").removeClass("show");
-        $("#" + showSection +"-container").addClass("show");
+        document.getElementById(showSection +"-container").scrollIntoView();
     });
 
     setUpGalaxy();
