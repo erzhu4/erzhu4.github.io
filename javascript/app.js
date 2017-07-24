@@ -50,7 +50,7 @@ $(function(){
         });
     };
 
-    $('.show-section').on('click', function(){
+    $('.show-section').on('click', function(event) {
         var showSection = $(event.currentTarget).data('show');
         document.getElementById(showSection +"-container").scrollIntoView();
     });
