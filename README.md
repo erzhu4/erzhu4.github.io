@@ -1,5 +1,25 @@
-# erzhu4.github.io
+# Portfolio-vue-react
 
-Portfolio [http://ericzhu.xyz](http://ericzhu.xyz)
+Online portfolio implementing Vue and React
 
-please see [builderApp](https://github.com/erzhu4/builderApp/tree/master/resources/assets/js) Repository for source code.
+## Setup Instructions
+
+This project was built and tested on npm version 5.8.0.
+
+#### Install the dependencies:
+
+```bash
+npm install
+```
+
+#### Compile Vue:
+
+```bash
+npm run build-portfolio-vue
+```
+
+#### Open a browser and open file:
+
+```
+index.html
+```
